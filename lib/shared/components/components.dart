@@ -81,14 +81,17 @@ Widget DefaultTextFormField({
   IconData suffix,
   Function suffixonPressed,
   bool ispassword = false,
+     String hint,
 }) =>
     TextFormField(
       keyboardType: type,
       obscureText: ispassword,
       validator: validation,
       controller: controller,
+
       decoration: InputDecoration(
         labelText: lable,
+        hintText: hint,
         prefixIcon: Icon(icon),
         suffixIcon: suffix != null
             ? IconButton(onPressed: suffixonPressed, icon: Icon(suffix))
@@ -150,7 +153,7 @@ showdialogall(context, String mytitle, String mycontent) {
       });
 }
 
-String ValidPassword(val) {
+String passwordValid(val) {
   if (val.trim().isEmpty) {
     return ' user password cant be Empty';
   }
@@ -163,7 +166,7 @@ String ValidPassword(val) {
   }
 }
 
-String ValidEmail(val) {
+String emailValid(val) {
   if (val.trim().isEmpty) {
     return ' user Email cant be Empty';
   }
@@ -171,7 +174,7 @@ String ValidEmail(val) {
     return ' user Email cant be less than 4';
   }
 
-  if (val.trim().length > 20) {
+  if (val.trim().length > 50) {
     return ' user Email cant be more 20 ';
   }
   RegExp regex = new RegExp(pattern);
@@ -179,3 +182,19 @@ String ValidEmail(val) {
     return 'example@gmail.com';
   }
 }
+
+
+String userNameValid(String value){
+  if (value.trim() .isEmpty){
+    return ' user name cant be Empty';
+  }
+  if (value.trim() .length< 4){
+    return ' user name cant be less than 4';
+  }
+
+  if (value.trim() .length> 20){
+    return ' user name cant be more 20 ';
+  }
+}
+
+

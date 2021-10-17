@@ -35,9 +35,13 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   cupertino_icons: ^1.0.1
-  http: ^0.12.2
-  image_picker: ^0.6.7+22
-  google_fonts: 1.1.1
+  http: ^0.13.4
+  image_picker: ^0.8.4+2
+  google_fonts: ^2.0.0
+  shared_preferences: ^2.0.8
+
+
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
